@@ -1,0 +1,9 @@
+body {
+  text-align: center;
+  background-color: #eee;
+}
+
+link {
+  cursor: pointer;
+  text-decoration: none !important;
+}
