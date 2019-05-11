@@ -2,7 +2,7 @@ import { GET_ALL_LEASES, GET_MORE_INFO } from '../constants/actionTypes'
 
 const initialState = {
     all_leases: [],
-    lease_more_info: null,
+    lease_more_info: [],
 };
 
 export default function reducer(state = initialState, action) {

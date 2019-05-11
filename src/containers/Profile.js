@@ -15,8 +15,8 @@ import { getMoreDetails } from "../actions/action";
 const styles = theme => ({
     root: {
         ...theme.mixins.gutters(),
-        paddingTop: theme.spacing.unit * 2,
-        paddingBottom: theme.spacing.unit * 2,
+        padding: theme.spacing.unit * 10,
+        margin: theme.spacing.unit * 10
     },
     table: {
         minWidth: 700,
@@ -33,7 +33,7 @@ class Profile extends React.Component {
     }
 
     render() {
-        const { classes, lease_more_info } = this.props;
+        const { classes, lease_more_info = [] } = this.props;
         console.log(lease_more_info)
         return (
             <div className="App">
@@ -41,35 +41,37 @@ class Profile extends React.Component {
                 <center>
                     <Paper className={classes.root} elevation={1}>
                         <Typography variant="h5" component="h3">
-                            This is a sheet of paper.
-                    </Typography>
-                        <Typography component="p">
-                            Paper can be used to build surface or other elements for your application.
-                    </Typography>
+                            Lease information of {lease_more_info.id}
+                        </Typography>
+                        {/* <Typography component="p">
+                        Paper can be used to build surface or other elements for your application. 
+                        </Typography> */}
 
                         <br />
                         <Table className={classes.table}>
                             <TableHead>
                                 <TableRow>
-                                    <TableCell>Dessert (100g serving)</TableCell>
-                                    <TableCell align="right">Calories</TableCell>
-                                    <TableCell align="right">Fat (g)</TableCell>
-                                    <TableCell align="right">Carbs (g)</TableCell>
-                                    <TableCell align="right">Protein (g)</TableCell>
+                                    <TableCell>Lease Id</TableCell>
+                                    <TableCell align="right">start_date</TableCell>
+                                    <TableCell align="right">end_date</TableCell>
+                                    <TableCell align="right">rent</TableCell>
+                                    <TableCell align="right">frequency</TableCell>
+                                    <TableCell align="right">payment_day</TableCell>
                                 </TableRow>
                             </TableHead>
                             <TableBody>
-                                {lease_more_info.map(row => (
-                                    <TableRow key={row.id}>
-                                        <TableCell component="th" scope="row">
-                                            {row.name}
-                                        </TableCell>
-                                        <TableCell align="right">{row.calories}</TableCell>
-                                        <TableCell align="right">{row.fat}</TableCell>
-                                        <TableCell align="right">{row.carbs}</TableCell>
-                                        <TableCell align="right">{row.protein}</TableCell>
-                                    </TableRow>
-                                ))}
+                                {/* {lease_more_info.map(row => ( */}
+                                <TableRow key={lease_more_info.id}>
+                                    <TableCell component="th" scope="lease_more_info">
+                                        {lease_more_info.id}
+                                    </TableCell>
+                                    <TableCell align="right">{lease_more_info.start_date}</TableCell>
+                                    <TableCell align="right">{lease_more_info.end_date}</TableCell>
+                                    <TableCell align="right">{lease_more_info.rent}</TableCell>
+                                    <TableCell align="right">{lease_more_info.frequency}</TableCell>
+                                    <TableCell align="right">{lease_more_info.payment_day}</TableCell>
+                                </TableRow>
+                                {/* ))} */}
                             </TableBody>
                         </Table>
                     </Paper>
