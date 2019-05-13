@@ -10,7 +10,7 @@ import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
-import { getMoreDetails } from "../actions/action";
+import { getMoreDetails } from "../actions/Action";
 
 const styles = theme => ({
     root: {
